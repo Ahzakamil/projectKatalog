@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hasil pencarian buku di KlikBaca berdasarkan judul, penulis, atau topik." />
+  <title>Hasil pencarian - KlikBaca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Plus Jakarta Sans (isi halaman), Instrument Sans (navbar) -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="results-page">
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="logo"><img src="image/logo.png" alt=""></a>
+    <div class="search-box" role="search">
+      <button class="btn-search" id="searchBtn" type="button" aria-label="Cari buku">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+      <input type="text" id="searchInput" placeholder="Cari judul, penulis, atau topik..." aria-label="Cari buku" />
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#layanan">Layanan</a>
+      <a href="index.html#acara">Acara</a>
+      <a href="index.html#about">Tentang</a>
+      <a href="index.html#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- ========== HASIL ========== -->
+  <main class="full-layar">
+    <section class="book-grid-section">
+      <h1 class="section-title" id="resultTitle">Hasil pencarian</h1>
+      <p class="result-count" id="resultCount"></p>
+      <div id="book" class="book-grid-container"></div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-container">
+        <div class="footer-brand"><h3>KlikBaca</h3></div>
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <ul class="col-menu">
+              <li><a href="index.html#layanan">Layanan</a></li>
+              <li><a href="index.html#acara">Acara</a></li>
+              <li><a href="index.html#faq">Pertanyaan umum</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="contact-info"><a href="mailto:abbasyi102@gmail.com">abbasyi102@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="bottom-container">
+          <span class="geo-location">Indonesia</span>
+          <span class="copyright">&copy; 2026 KlikBaca</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

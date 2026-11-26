@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detail buku di KlikBaca: judul, penulis, deskripsi, genre, dan informasi lainnya." />
+  <title>Detail buku - KlikBaca</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9A%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Plus Jakarta Sans (isi halaman) dan Hanken Grotesk (judul buku) -->
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="halaman-buku.css" />
+  <!-- olah.js mengisi data buku. olah-ui.js melengkapi navbar, pencarian, tombol, dan sampul.
+       script.js tidak dipakai di halaman ini, jadi tidak bentrok. -->
+  <script src="olah.js" defer></script>
+  <script src="olah-ui.js" defer></script>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="logo"><img src="image/logo.png" alt=""></a>
+    <div class="search-box" role="search">
+      <button class="btn-search" id="searchBtn" type="button" aria-label="Cari buku">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+      <input type="text" id="searchInput" placeholder="Cari judul, penulis, atau topik..." aria-label="Cari buku" />
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#layanan">Layanan</a>
+      <a href="index.html#acara">Acara</a>
+      <a href="index.html#about">Tentang</a>
+      <a href="index.html#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="book-detail-section">
+      <a href="hasil.html" class="back-link" id="backLink">&larr; Kembali</a>
+
+      <div class="book-detail-card">
+
+        <!-- Sisi kiri: sampul buku -->
+        <div class="book-cover-wrapper">
+          <div class="book-cover-placeholder">
+            <div class="cover-vintage-header"></div>
+            <div class="cover-title-box">
+              <h2 id="coverJudul">Memuat...</h2>
+              <p id="coverPembuat"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sisi kanan: informasi & deskripsi buku -->
+        <div class="book-info-wrapper">
+          <div class="info-header">
+            <div>
+              <span class="genre-tag" id="genre"></span>
+              <h1 class="book-main-title" id="title">Memuat...</h1>
+              <p class="book-author" id="pembuat"></p>
+              <p class="book-meta" id="tahunRilis"></p>
+            </div>
+          </div>
+
+          <!-- Deskripsi -->
+          <p class="book-description" id="paragraf">Memuat deskripsi buku...</p>
+
+          <!-- Tombol aksi: membuka halaman buku di Open Library (tab baru) -->
+          
+
+          <!-- Statistik -->
+          <div class="book-stats-row">
+            <div class="stat-item">
+              <span class="stat-value" id="statHalaman">-</span>
+              <span class="stat-label">Halaman</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-value" id="statRating">-</span>
+              <span class="stat-label">Rating</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-value" id="statBahasa">-</span>
+              <span class="stat-label">Bahasa</span>
+            </div>
+
+            <div class="genre-action-row">
+            <a href="https://openlibrary.org/" class="btn-more1" id="btnMore" target="_blank" rel="noopener noreferrer"><span>Baca selengkapnya</span><span class="btn-arrow">&rsaquo;</span></a>
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-container">
+        <div class="footer-brand"><h3>KlikBaca</h3></div>
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <ul class="col-menu">
+              <li><a href="index.html#layanan">Layanan</a></li>
+              <li><a href="index.html#acara">Acara</a></li>
+              <li><a href="index.html#faq">Pertanyaan umum</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="contact-info"><a href="mailto:abbasyi102@gmail.com">abbasyi102@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="bottom-container">
+          <span class="geo-location">Indonesia</span>
+          <span class="copyright">&copy; 2026 KlikBaca</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tombol "Baca selengkapnya" -> halaman buku di Open Library, dari ?id=... di alamat halaman ini.
+    // Dijalankan lebih dulu daripada olah.js (defer); bila olah.js mengisi tautan sendiri, miliknya yang dipakai.
+    (() => {
+      const id = new URLSearchParams(location.search).get("id");
+      const tombol = document.getElementById("btnMore");
+      if (id && tombol) tombol.href = "https://openlibrary.org/works/" + encodeURIComponent(id);
+    })();
+  </script>
+
+</body>
+</html>
